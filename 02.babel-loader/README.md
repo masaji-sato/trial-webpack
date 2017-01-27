@@ -8,7 +8,7 @@ let test = 5;
 
 ## babel-loaderを使用せずにバンドルしてみる
 
-以下の設定をつかってバンドルして、letが変換されていないことを確認。
+以下の設定をつかってバンドルして、出力されたbundle.js内を確認し、letが変換されていないことを確認。
 
 ```
 var path = require('path');
@@ -37,7 +37,7 @@ npm install --save-dev babel-core babel-preset-es2015
 npm install --save-dev babel-loader
 ```
 
-### jsを変換するためのpresetを、.babelrcファイル内に設定
+### jsをトランスフォームするためのpresetを、.babelrcファイル内に設定
 ```
  { "presets": [ "es2015" ] }
 ```
@@ -45,8 +45,9 @@ npm install --save-dev babel-loader
 ### バンドル
 
 webpack設定ファイル。
-node_modulesディレクトリ下は除外して、
-jsファイルをbabel-loaderを使ってトランスフォームする。
+
+node_modulesディレクトリ意外のjsファイルをbabel-loaderを使ってトランスフォームする。
+
 .babelrcでpresetを設定済みであることもポイント。
 
 ```
