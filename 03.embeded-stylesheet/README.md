@@ -15,11 +15,15 @@ https://github.com/webpack-contrib/css-loader
 https://webpack.js.org/guides/code-splitting-css/
 
 
+## インストール
+
 ```
 npm install style-loader css-loader --save-dev
 ```
 
 ### stylesheetとmain.jsとindex.html
+
+スタイルシート
 
 ``` stylesheet.css
 h1 {
@@ -27,9 +31,12 @@ h1 {
 }
 ```
 
+js
+
 ``` main.js
 require("./stylesheet.css")
 ```
+html
 
 ```
 <!DOCTYPE html>
@@ -44,7 +51,9 @@ require("./stylesheet.css")
 
 ### ビルド
 
-``` webpack.config.js
+webpack.config.js
+
+``` javascript
 var path = require('path');
 
 module.exports =  {
@@ -62,7 +71,7 @@ module.exports =  {
 }
 ```
 
-``` package.jsonの"scripts"
+``` javascript
   "scripts": {
     "build": "webpack"
   }
